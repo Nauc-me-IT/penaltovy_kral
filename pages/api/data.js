@@ -32,8 +32,8 @@ export default async function totalPlayers(req, res) {
 	doc.useApiKey("AIzaSyBP6A-1rMWSR2Oi2maHP0KIk73Nn5_Psbc");
 	await doc.loadInfo(); // Přepnuli jsme z getInfo() na loadInfo()
 
-	const sheet = doc.sheetsByIndex[0];
-	 await sheet.loadCells("A15:C15"); // Načteme buňky A15 až C15
+	const sheet = doc.sheetsByIndex[4];
+    await sheet.loadCells("A15:C15"); // Načteme buňky A15 až C15
 
 	// Save data into variables
 	const totalPlayers = sheet.getCellByA1("A15");
@@ -41,5 +41,5 @@ export default async function totalPlayers(req, res) {
 	const round = sheet.getCellByA1("C15");
 
 // export a JSON object with the data we need
-	res.status(200).json({ totalPlayers: totalPlayers.value, restPlayers: restPlayers.value, round: round.value });
+	res.status(200).json({ totalPlayers: totalPlayers.value, restPlayers: restPlayers.value, round: round.value});
 }

@@ -16,7 +16,7 @@ const Aside = () => {
 	 			.then((data) => {
 	 				setStats(data);
 	 				setLoading(false);
-					console.log(data)
+					//console.log(data)
 	 			});
 	 	}, 10000);
 	 	return () => clearInterval(interval);
@@ -33,7 +33,7 @@ const Aside = () => {
 			className="flex flex-col items-center
 		  h-screen w-1/3 pt-8">
 			<h1 className="text-5xl font-extrabold">Penaltový Král</h1>
-			<Category />
+			<Category  />
 			<div className="w-full h-full flex flex-col justify-between pt-8">
 				<Stats stats={stats} />
 				<Players />
