@@ -1,7 +1,12 @@
+import "./globals.css";
+import Stream from "../components/Stream";
+import Aside from "../components/Aside";
+
 export default function Home() {
-    return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <h1 className="text-3xl font-bold">Penaltový král Moravskoslezského hraje 2023</h1>
-      </main>
-    )
-  }
+	return (
+		<main className="flex min-h-screen w-screen items-center justify-between">
+			<Stream />
+			<Aside />
+		</main>
+	);
+}
