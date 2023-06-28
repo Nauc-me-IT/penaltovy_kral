@@ -1,6 +1,6 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
-export default async function handler(req, res) {
+export default async function handler(_req, res) {
   const doc = new GoogleSpreadsheet(
     "1s6GBtj7ItUPdbnYUGZ7ghzAtbwCO-PKU4RqivCXdotI"
   );
