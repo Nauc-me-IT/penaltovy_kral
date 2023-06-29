@@ -34,8 +34,8 @@ const nextRound = [
 
 const Players = () => {
 	return (
-		<section className="w-full py-8 text-3xl font-semibold">
-			<h2 className="text-center bg-sky-600 my-4">Aréna:</h2>
+		<section className="w-full h-[40%] text-3xl font-semibold">
+			<h2 className="text-center bg-sky-600 ">Aréna:</h2>
 			{arena.map((player) => (
 				<Player
 					key={player.id}

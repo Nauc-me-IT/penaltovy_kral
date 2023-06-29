@@ -1,9 +1,13 @@
 import React from 'react'
+import Carousel from "./Carousel";
 
 const Sponsors = () => {
-  return (
-		<section className="flex items-center justify-center w-full h-[30%]  bg-gray-300 ">
-			<h2 className="text-3xl font-bold">LOGO Sponzorů</h2>
+
+
+	return (
+		<section className="h-[40%] flex flex-col items-center justify-center w-full">
+			<h2 className="absolute -z-10 text-6xl font-bold">Sponzoři:</h2>
+			<Carousel />
 		</section>
 	);
 }
