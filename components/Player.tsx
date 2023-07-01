@@ -9,7 +9,7 @@ interface Props {
 
 const NextPlayers = ({id, playerNumber, firstName, secondName}:Props) => {
   return (
-		<div id={id} className="flex flex-row  w-full justify-between text-center">
+		<div id={id} className="flex flex-row  w-full justify-between text-center text-xl font-bold">
 			<h4 className="w-[20%]">{playerNumber}</h4>
 			<h4 className="w-[60%]">
 				{firstName} {secondName}

@@ -78,15 +78,16 @@ const Carousel = () => {
 	}, [currentIndex, images.length]);
 
 	return (
-		<div className="carousel">
+		<div className="carousel w-full ">
 			{images.map((image, index) => {
 
 				return (
 					<Image
 						key={index}
 						className={`slide`}
-						width={400}
-						height={300}
+						width={200}
+						height={100}
+
 						src={image}
 						alt={`Slide ${index + 1}`}
 						loading="lazy"

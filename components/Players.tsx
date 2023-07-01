@@ -24,7 +24,32 @@ const nextRound = [
 		firstName: "David",
 		secondName: "Kalaš",
 	},
-	{	id: crypto.randomUUID(),
+	{
+		id: crypto.randomUUID(),
+		playerNumber: 44,
+		firstName: "Milan",
+		secondName: "Pešák",
+	},
+	{
+		id: crypto.randomUUID(),
+		playerNumber: 17,
+		firstName: "David",
+		secondName: "Kalaš",
+	},
+	{
+		id: crypto.randomUUID(),
+		playerNumber: 44,
+		firstName: "Milan",
+		secondName: "Pešák",
+	},
+	{
+		id: crypto.randomUUID(),
+		playerNumber: 17,
+		firstName: "David",
+		secondName: "Kalaš",
+	},
+	{
+		id: crypto.randomUUID(),
 		playerNumber: 44,
 		firstName: "Milan",
 		secondName: "Pešák",
@@ -34,8 +59,8 @@ const nextRound = [
 
 const Players = () => {
 	return (
-		<section className="w-full h-[40%] text-3xl font-semibold">
-			<h2 className="text-center bg-sky-600 ">Aréna:</h2>
+		<section className="flex flex-col justify-between w-full h-[50%] text-2xl font-semibold border-2 border-black grow">
+			<h2 className="text-center bg-sky-600 font-bold">Aréna:</h2>
 			{arena.map((player) => (
 				<Player
 					key={player.id}
@@ -46,7 +71,7 @@ const Players = () => {
 				/>
 			))}
 
-			<h2 className="text-center bg-sky-600 my-4">Next Round:</h2>
+			<h2 className="text-center bg-sky-600 font-bold ">Next Round:</h2>
 			{nextRound.map((player) => (
 				<Player
 					key={player.id}
