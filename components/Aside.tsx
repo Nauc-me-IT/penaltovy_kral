@@ -1,5 +1,4 @@
 import React from 'react'
-import SelectMenu from './SelectMenu'
 import Stats from './Stats'
 import Players from './Players'
 import Sponsors from './Sponsors'
@@ -28,7 +27,7 @@ const Aside = () => {
 	 			.then((data) => {
 	 				setStats(data);
 	 				setLoading(false);
-					console.log(data)
+					//console.log(data)
 	 			});
 	 	}, 10000);
 	 	return () => clearInterval(interval);
@@ -47,13 +46,13 @@ const Aside = () => {
 		<aside
 			className="flex flex-col items-center
 		  h-screen w-1/4">
-			<div className="w-full flex flex-col items-center justify-center h-[15%]">
-				<h1 className="text-4xl font-extrabold">Penaltový Král</h1>
-				<SelectMenu />
+			<div className="w-full flex flex-col items-center justify-center h-[15%] bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
+				<h1 className="text-4xl font-extrabold ">Penaltový Král 2023</h1>
+				<h2 className="font-bold text-2xl">Kadeti</h2>
 			</div>
 			<div className="w-full h-[85%] flex flex-col justify-between grow">
-				<Stats stats={stats} />
-				<Players />
+				{!loading && <Stats stats={stats} />}
+				<Players stats={stats} loading={loading} />
 				<Sponsors />
 			</div>
 		</aside>
