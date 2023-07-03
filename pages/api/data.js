@@ -26,13 +26,13 @@ export default async function totalPlayers(req, res) {
 
 	const pokus = doc.sheetsByIndex[list.value];
 	await pokus.loadCells("AJ2:AJ3");
-
+/*
 	const vysledky = doc.sheetsByIndex[list.value];
 	await vysledky.loadCells("A4:B13");
 
-	//Results LIST
+	//Results
 	const vysledkyNR = vysledky.getCellByA1("A4");
-	const vysledkyName = vysledky.getCellByA1("B4");
+	const vysledkyName = vysledky.getCellByA1("B4");*/
 
 	// Save data into variables
 	const totalPlayers = sheet.getCellByA1("A3");
@@ -124,10 +124,6 @@ export default async function totalPlayers(req, res) {
 			nextPlayer4_Name: nextPlayer4_Split[1],
 			nextPlayer5_Name: nextPlayer5_Split[1],
 			nextPlayer6_Name: nextPlayer6_Split[1],
-		},
-		results: {
-			vysledkyNR: vysledkyNR.value,
-			vysledkyName: vysledkyName.value,
 		},
 });
 }

@@ -6,6 +6,7 @@ const Vysledky = () => {
 		const [stats, setStats] = useState<any>([]);
 		const [loading, setLoading] = useState(true);
 
+
 		//REFRESH IS SET TO 10 SECONDS by setTimeout
 		useEffect(() => {
 			const interval = setInterval(() => {
@@ -29,7 +30,9 @@ const Vysledky = () => {
 			);
 		}
 
-	return <Results />;
+	return <div>
+		{stats && <Results results={stats.results} loading={loading} />}
+	</div>;
 }
 
 export default Vysledky

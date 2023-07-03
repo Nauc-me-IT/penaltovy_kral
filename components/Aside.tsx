@@ -25,11 +25,24 @@ const Aside = () => {
 	 }, []);
 
 	if (loading) {
-		return <aside
-			className="flex flex-col items-center justify-center
+		return (
+			<aside
+				className="flex flex-col items-center justify-center
 		  h-screen w-full max-w-[550px]">
-			<h2 className="text-2xl">Loading...</h2>
-		  </aside>
+				<img src="https://git.io/typing-svg" alt="" />
+				<a href="https://git.io/typing-svg">
+					<img
+						src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=35&pause=1000&color=2C9BF7&center=true&vCenter=true&width=435&lines=.+.+.+Loading+.+.+."
+						alt="Typing SVG"
+					/>
+				</a>
+
+				<img
+					src="https://i.gifer.com/origin/9e/9eb95f634cef84f81f2d4d9929441f53_w200.webp"
+					alt=""
+				/>
+			</aside>
+		);
 
 	}
 
