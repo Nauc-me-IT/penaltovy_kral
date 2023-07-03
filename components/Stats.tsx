@@ -10,6 +10,7 @@ type Props = {
 
 const Stats = ({stats}:Props) => {
 
+
   return (
 		<section className=" flex flex-col justify-around w-full h-[15%] text-xl  font-semibold border-2 border-red-500">
 			<div className="flex flex-row justify-between pl-4">
