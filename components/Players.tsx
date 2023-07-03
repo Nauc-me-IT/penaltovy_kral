@@ -58,25 +58,34 @@ const nextRound = [
 
 interface Props {
 	stats: {
-		restPlayers: number;
-		round: number;
-		shooter_1: string;
-		shooter_2: string;
-		totalPlayers: number;
-		nextPlayers: {
+		stats: {
+			restPlayers: number;
+			round: number;
+			totalPlayers: number;
+		};
+		shooters: {
 			[key: string]: string;
 		};
+		nextPlayers_NR: {
+			[key: string]: string;
+		};
+		nextPlayers_Name:{
+			[key: string]: string | any;
+		}
 	};
 	loading: boolean;
 }
 
 const Players = ({stats, loading}:Props) => {
-	const [shooters, setShooters] = useState<[] | string[]>([])
-	const [nextPlayers, setNextPlayers] = useState<[] | string[]>([])
-	console.log(stats)
+	const [numbers, setNumbers] = useState<[] | string[]>([]);
+	const [shooters, setShooters] = useState<[] | string[]>([]);
+	const [next_Nr, setNext_Nr] = useState<[] | string[]>([]);
+	const [nextPlayers, setNextPlayers] = useState<[] | string[]>([]);
+
+
 
 	const showNextPlayers = () => {
-		const nextPlayers = stats.nextPlayers;
+		const nextPlayers = stats.nextPlayers_Name;
 		const nextPlayersArray = [];
 		for (const [key, value] of Object.entries(nextPlayers)) {
 			nextPlayersArray.push(value);
@@ -84,9 +93,19 @@ const Players = ({stats, loading}:Props) => {
 		setNextPlayers(nextPlayersArray);
 	}
 
+	const saveNumbers = () => {
+		const nextNr = stats.nextPlayers_NR;
+		const nextNrArray = [];
+		for (const [key, value] of Object.entries(nextNr)) {
+			nextNrArray.push(value);
+		}
+		setNext_Nr(nextNrArray);
+	}
 
 	useEffect(() => {
-		setShooters([stats.shooter_1, stats.shooter_2]);
+		setNumbers([stats.shooters.shooter_1_nr, stats.shooters.shooter_2_nr]);
+		setShooters([stats.shooters.shooter_1_name, stats.shooters.shooter_2_name]);
+		saveNumbers();
 		showNextPlayers();
 	}
 	, [stats])
@@ -98,13 +117,15 @@ const Players = ({stats, loading}:Props) => {
 			</h2>
 
 			{!loading &&
-				shooters.map((shooter, index) => <Player key={index} name={shooter} />)}
+				shooters.map((shooter, index) => (
+					<Player key={index} name={shooter} number={numbers[index]} />
+				))}
 
-			<h2 className="text-center bg-gradient-to-r from-cyan-500 to-blue-500 font-bold from-[#11193a] to-[#36457a] font-bold text-white py-1">
+			<h2 className="text-center bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
 				Next Round:
 			</h2>
 			{nextPlayers.map((player, index) => (
-				<Player key={index} name={player} />
+				<Player key={index} name={player} number={next_Nr[index]} />
 			))}
 		</section>
 	);

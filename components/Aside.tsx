@@ -4,15 +4,6 @@ import Players from './Players'
 import Sponsors from './Sponsors'
 import { useState, useEffect } from "react";
 
-/*
-const styles = {
-	btn15: "text-xs ",
-	btnActive15:
-		"text-3xl transition-all duration-500 ease-in-out transform text-center border-sky-200 border-4 font-bold ml-[25%]",
-	btn18: "text-xs ",
-	btnActive18:
-		"text-3xl transition-all duration-500 ease-in-out transform text-center justify-center  border-sky-200 border-4 font-bold mr-[30%]",
-};*/
 const Aside = () => {
 	const [stats, setStats] = useState<any>([]);
 	const [loading, setLoading] = useState(true);
@@ -26,8 +17,9 @@ const Aside = () => {
 	 			.then((res) => res.json())
 	 			.then((data) => {
 	 				setStats(data);
+					console.log(data);
+
 	 				setLoading(false);
-					//console.log(data)
 	 			});
 	 	}, 10000);
 	 	return () => clearInterval(interval);
@@ -48,10 +40,11 @@ const Aside = () => {
 		  h-screen w-1/4">
 			<div className="w-full flex flex-col items-center justify-center h-[15%] bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
 				<h1 className="text-4xl font-extrabold ">Penaltový Král 2023</h1>
-				<h2 className="font-bold text-2xl">Kadeti</h2>
+				<h2 className="font-bold text-2xl">{stats.category}</h2>
+
 			</div>
 			<div className="w-full h-[85%] flex flex-col justify-between grow">
-				{!loading && <Stats stats={stats} />}
+				{!loading && <Stats stats={stats.stats} />}
 				<Players stats={stats} loading={loading} />
 				<Sponsors />
 			</div>
