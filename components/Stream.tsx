@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const Stream = () => {
-  return (
-		<div className="bg-red-500 h-screen w-2/3 flex justify-center items-center">
+	return (
+		<div className="bg-red-500 h-screen w-3/4 flex justify-center items-center">
 			<iframe
 				width="100%"
 				height="100%"
@@ -13,6 +13,6 @@ const Stream = () => {
 				allowFullScreen></iframe>
 		</div>
 	);
-}
+};
 
-export default Stream
+export default Stream;
