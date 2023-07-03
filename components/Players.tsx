@@ -59,7 +59,7 @@ const Players = ({stats, loading}:Props) => {
 	return (
 		<section className="flex flex-col justify-between w-full h-[50%] text-2xl font-semibold border-2 border-black grow">
 			<h2 className="text-center bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
-				Aréna:
+				Arena:
 			</h2>
 
 			{!loading &&

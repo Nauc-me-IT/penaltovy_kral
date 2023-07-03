@@ -39,7 +39,7 @@ const Aside = () => {
 
 				<img
 					src="https://i.gifer.com/origin/9e/9eb95f634cef84f81f2d4d9929441f53_w200.webp"
-					alt=""
+					alt="loading-icon"
 				/>
 			</aside>
 		);
