@@ -9,7 +9,6 @@ const Aside = () => {
 	const [loading, setLoading] = useState(true);
 	const [active, setActive] = useState("15");
 
-
 	//REFRESH IS SET TO 10 SECONDS by setTimeout
 	 useEffect(() => {
 	 	const interval = setInterval(() => {
