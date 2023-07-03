@@ -51,7 +51,7 @@ const Aside = () => {
 			className="flex flex-col items-center
 		  h-screen max-w-[550px]">
 			<div className="w-full flex flex-col items-center justify-center h-[15%] bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
-				<h1 className="text-4xl font-extrabold ">Penaltový Král 2023</h1>
+				<h1 className="text-4xl font-bold ">O Penaltového Krále 2023</h1>
 				<h2 className="font-bold text-2xl">{stats.category}</h2>
 
 			</div>

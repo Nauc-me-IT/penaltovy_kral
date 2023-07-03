@@ -57,7 +57,7 @@ const Players = ({stats, loading}:Props) => {
 	, [stats])
 
 	return (
-		<section className="flex flex-col justify-between w-full h-[50%] text-2xl font-semibold border-2 border-black grow">
+		<section className="flex flex-col justify-between w-full h-[50%] text-2xl font-semibold grow">
 			<h2 className="text-center bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
 				Arena:
 			</h2>
