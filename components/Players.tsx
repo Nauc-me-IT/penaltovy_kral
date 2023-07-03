@@ -2,66 +2,12 @@ import React from "react";
 import Player from "./Player";
 import {useState, useEffect} from "react";
 
-const arena = [
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 21,
-		firstName: "Aleš",
-		secondName: "Dostál",
-	},
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 1,
-		firstName: "Milan",
-		secondName: "Diviš",
-	},
-];
 
-const nextRound = [
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 17,
-		firstName: "David",
-		secondName: "Kalaš",
-	},
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 44,
-		firstName: "Milan",
-		secondName: "Pešák",
-	},
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 17,
-		firstName: "David",
-		secondName: "Kalaš",
-	},
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 44,
-		firstName: "Milan",
-		secondName: "Pešák",
-	},
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 17,
-		firstName: "David",
-		secondName: "Kalaš",
-	},
-	{
-		id: crypto.randomUUID(),
-		playerNumber: 44,
-		firstName: "Milan",
-		secondName: "Pešák",
-	},
-];
 
 interface Props {
 	stats: {
 		stats: {
-			restPlayers: number;
-			round: number;
-			totalPlayers: number;
+			[key: number]: number;
 		};
 		shooters: {
 			[key: string]: string;

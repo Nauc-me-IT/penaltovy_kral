@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Bauer from "./logos/bauer.webp";
 import Autoskola_beskyd from "./logos/autoskola_beskyd.webp";
 import Autoopravna from "./logos/autoopravna.webp";
-import Klimont from "./logos/air-klimont.webp";
+import Klimont from "./logos/klimont.webp";
 import Alfest from "./logos/alfest2.webp";
 import Beton from "./logos/bo-beton.webp";
 import Buzek from "./logos/bu-1.webp";
@@ -78,7 +78,7 @@ const Carousel = () => {
 	}, [currentIndex, images.length]);
 
 	return (
-		<div className="carousel w-full ">
+		<div className="carousel w-full h-full ">
 			{images.map((image, index) => {
 
 				return (
@@ -87,9 +87,8 @@ const Carousel = () => {
 						className={`slide`}
 						width={200}
 						height={100}
-
 						src={image}
-						alt={`Slide ${index + 1}`}
+						alt={`Sponzor ${index + 1}`}
 						loading="lazy"
 						style={{
 							transform: `translateX(${cislo}%)`,
