@@ -57,9 +57,9 @@ const Players = ({stats, loading}:Props) => {
 	, [stats])
 
 	return (
-		<section className="flex flex-col justify-between w-full h-[55%] text-2xl font-semibold grow border-2 border-red-500">
+		<section className="flex flex-col justify-between w-full h-[60%] text-2xl font-semibold">
 			<h2 className="text-center bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
-				Arena:
+				Aréna:
 			</h2>
 
 			{!loading &&
@@ -68,7 +68,7 @@ const Players = ({stats, loading}:Props) => {
 				))}
 
 			<h2 className="text-center bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
-				Next Round:
+				Připraví se:
 			</h2>
 			{nextPlayers.map((player, index) => (
 				<Player key={index} name={player} number={next_Nr[index]} />

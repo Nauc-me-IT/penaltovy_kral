@@ -88,3 +88,12 @@
   flex: 0 0 100%;
   transition: transform 0.5s ease-in-out;
 }
+
+@media screen and (max-width: 440px) {
+  .appName{
+	font-size: 7dvw;
+  }
+  .playersText{
+	font-size: 5.5dvw;
+  }
+}
