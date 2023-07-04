@@ -7,7 +7,7 @@ export default async function totalPlayers(req, res) {
 	doc.useApiKey("AIzaSyBP6A-1rMWSR2Oi2maHP0KIk73Nn5_Psbc");
 	await doc.loadInfo(); // Přepnuli jsme z getInfo() na loadInfo()
 // refactor the code below
-	let List_D2 = doc.sheetsByIndex[4];
+	let List_D2 = doc.sheetsByIndex[2];
 	await List_D2.loadCells("C2:D2");
 
 

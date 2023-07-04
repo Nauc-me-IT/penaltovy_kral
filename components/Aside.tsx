@@ -52,7 +52,7 @@ const Aside = ({myWidth}:Props) => {
 	return (
 		<aside
 			className={`flex flex-col items-center
-		  h-screen w-screen ${myWidth ? "max-w-[450px]" : "max-w-[450px]"}`}>
+		  h-screen w-full max-w-[450px]`}>
 			<div className="w-full flex flex-col items-center justify-center h-[10%] bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
 				<h1 className="text-4xl font-bold appName">O Penaltového Krále 2023</h1>
 				<h2 className="font-bold text-2xl">{stats.category}</h2>
