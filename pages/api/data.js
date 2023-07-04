@@ -6,7 +6,7 @@ export default async function totalPlayers(req, res) {
 	);
 	doc.useApiKey("AIzaSyBP6A-1rMWSR2Oi2maHP0KIk73Nn5_Psbc");
 	await doc.loadInfo(); // Přepnuli jsme z getInfo() na loadInfo()
-
+// refactor the code below
 	let List_D2 = doc.sheetsByIndex[4];
 	await List_D2.loadCells("C2:D2");
 
@@ -40,10 +40,23 @@ export default async function totalPlayers(req, res) {
 	const round = sheet.getCellByA1("C3");
 
 
-	const shooter_1_name = A3_column.getCellByA1("AG3");
-	const shooter_1_split = shooter_1_name.value.split(". ");
+const shooter_1_name = A3_column.getCellByA1("AG3");
+
+	const shooter_1_split =
+		shooter_1_name.value === "" ||
+		shooter_1_name.value === null ||
+		shooter_1_name.value === undefined
+			? ["", ""]
+			: shooter_1_name.value.split(". ");
+
+
 	const shooter_2_name = A3_column.getCellByA1("AG4");
-	const shooter_2_split = shooter_2_name.value.split(". ");
+	const shooter_2_split =
+		shooter_2_name.value === "" ||
+		shooter_2_name.value === null ||
+		shooter_2_name.value === undefined
+			? ["", ""]
+			: shooter_2_name.value.split(". ");
 
 	const nextPlayer1 = AI3_column.getCellByA1("AJ3");
 	const nextPlayer2 = AI3_column.getCellByA1("AJ4");
