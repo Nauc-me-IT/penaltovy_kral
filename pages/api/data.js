@@ -24,6 +24,7 @@ export default async function totalPlayers(req, res) {
 	let vyberList = doc.sheetsByIndex[2];
 	await vyberList.loadCells("C2:D2");
 
+	// list = index of list in google sheets
 	const list = vyberList.getCellByA1("D2");
 	const category = vyberList.getCellByA1("C2");
 
