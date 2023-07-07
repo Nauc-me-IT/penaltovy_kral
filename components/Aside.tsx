@@ -4,14 +4,10 @@ import Players from './Players'
 import Sponsors from './Sponsors'
 import { useState, useEffect } from "react";
 
-type Props = {
-	myWidth: boolean
-}
 
-const Aside = ({myWidth}:Props) => {
+const Aside = () => {
 	const [stats, setStats] = useState<any>([]);
 	const [loading, setLoading] = useState(true);
-	const [active, setActive] = useState("15");
 
 
 	//REFRESH IS SET TO 10 SECONDS by setTimeout

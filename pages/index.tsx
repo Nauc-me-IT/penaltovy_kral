@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen w-screen items-center justify-between">
 			<Stream />
-			<Aside myWidth={false} />
+			<Aside />
 		</main>
 	);
 }

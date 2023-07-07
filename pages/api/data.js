@@ -55,6 +55,7 @@ export default async function totalPlayers(req, res) {
 	const nextPlayer5 = index.getCellByA1("AK4");
 	const nextPlayer6 = index.getCellByA1("AK5");
 
+
 	// export a JSON object with the data we need
 	res.status(200).json({
 		category: category.value,
@@ -63,27 +64,50 @@ export default async function totalPlayers(req, res) {
 			restPlayers: restPlayers.value,
 			round: round.value,
 		},
-		shooters: {
-			shooter_1_nr: checkCellValues(shooter_1)[0],
-			shooter_1_name: checkCellValues(shooter_1)[1],
-			shooter_2_nr: checkCellValues(shooter_2)[0],
-			shooter_2_name: checkCellValues(shooter_2)[1],
-		},
-		nextPlayers_NR: {
-			nextPlayer1_NR: checkCellValues(nextPlayer1)[0],
-			nextPlayer2_NR: checkCellValues(nextPlayer2)[0],
-			nextPlayer3_NR: checkCellValues(nextPlayer3)[0],
-			nextPlayer4_NR: checkCellValues(nextPlayer4)[0],
-			nextPlayer5_NR: checkCellValues(nextPlayer5)[0],
-			nextPlayer6_NR: checkCellValues(nextPlayer6)[0],
-		},
-		nextPlayers_Name: {
-			nextPlayer1_Name: checkCellValues(nextPlayer1)[1],
-			nextPlayer2_Name: checkCellValues(nextPlayer2)[1],
-			nextPlayer3_Name: checkCellValues(nextPlayer3)[1],
-			nextPlayer4_Name: checkCellValues(nextPlayer4)[1],
-			nextPlayer5_Name: checkCellValues(nextPlayer5)[1],
-			nextPlayer6_Name: checkCellValues(nextPlayer6)[1],
-		},
+		shooters: [
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(shooter_1)[0],
+				name: checkCellValues(shooter_1)[1],
+			},
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(shooter_2)[0],
+				name: checkCellValues(shooter_2)[1],
+			},
+		],
+		nextPlayers: [
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(nextPlayer1)[0],
+				name: checkCellValues(nextPlayer1)[1],
+			},
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(nextPlayer2)[0],
+				name: checkCellValues(nextPlayer2)[1],
+			},
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(nextPlayer3)[0],
+				name: checkCellValues(nextPlayer3)[1],
+			},
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(nextPlayer4)[0],
+				name: checkCellValues(nextPlayer4)[1],
+			},
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(nextPlayer5)[0],
+				name: checkCellValues(nextPlayer5)[1],
+			},
+			{
+				id: crypto.randomUUID(),
+				startNumber: checkCellValues(nextPlayer6)[0],
+				name: checkCellValues(nextPlayer6)[1],
+			},
+		],
+
 	});
 }
