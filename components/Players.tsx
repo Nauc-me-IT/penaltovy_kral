@@ -32,7 +32,7 @@ const Players = ({stats, loading}:Props) => {
 			</h2>
 			{!loading&&
 				Object.values(stats.nextPlayers).map((nextPlayer:any) => (
-					<Player key={nextPlayer.id} name={nextPlayer.name} number={nextPlayer.number} />
+					<Player key={nextPlayer.id} name={nextPlayer.name} number={nextPlayer.startNumber} />
 			))}
 		</section>
 	);

@@ -5,7 +5,8 @@ import Sponsors from './Sponsors'
 import { useState, useEffect } from "react";
 
 
-const Aside = () => {
+
+const Aside = ({width}:any) => {
 	const [stats, setStats] = useState<any>([]);
 	const [loading, setLoading] = useState(true);
 
@@ -26,8 +27,7 @@ const Aside = () => {
 	if (loading) {
 		return (
 			<aside
-				className="flex flex-col items-center justify-center
-		  h-screen w-full max-w-[550px]">
+				className={"flex flex-col items-center justify-center h-screen w-full max-w-[550px] "}>
 				<img src="https://git.io/typing-svg" alt="" />
 				<a href="https://git.io/typing-svg">
 					<img
@@ -42,19 +42,18 @@ const Aside = () => {
 				/>
 			</aside>
 		);
-
 	}
 
 	return (
 		<aside
 			className={`flex flex-col items-center
-		  h-screen w-full max-w-[450px]`}>
+		  h-screen w-full ${width}`}>
 			<div className="w-full flex flex-col items-center justify-center h-[10%] bg-gradient-to-r from-[#11193a] to-[#36457a] font-bold text-white py-1">
 				<h1 className="text-4xl font-bold appName">O Penaltového Krále 2023</h1>
 				<h2 className="font-bold text-2xl">{stats.category}</h2>
 			</div>
 			<div className="w-full h-[85%] flex flex-col justify-between grow">
-				{!loading && <Stats stats={stats.stats} />}
+				<Stats stats={stats.stats} />
 				<Players stats={stats} loading={loading} />
 				<Sponsors />
 			</div>

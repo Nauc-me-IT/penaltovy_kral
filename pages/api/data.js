@@ -7,7 +7,12 @@ export default async function totalPlayers(req, res) {
 	doc.useApiKey("AIzaSyBP6A-1rMWSR2Oi2maHP0KIk73Nn5_Psbc");
 	await doc.loadInfo(); // Přepnuli jsme z getInfo() na loadInfo()
 
+	/*
+	const checkCellValues = cell => !cell.value ? ["", ""] : cell.value.split("")
+	*/
+
 	const checkCellValues = (cell) => {
+		!cell.value ? "" : cell.value.split("");
 		if (
 			!cell.value ||
 			cell.value === "" ||
@@ -54,7 +59,6 @@ export default async function totalPlayers(req, res) {
 	const nextPlayer4 = index.getCellByA1("AK3");
 	const nextPlayer5 = index.getCellByA1("AK4");
 	const nextPlayer6 = index.getCellByA1("AK5");
-
 
 	// export a JSON object with the data we need
 	res.status(200).json({
@@ -108,6 +112,5 @@ export default async function totalPlayers(req, res) {
 				name: checkCellValues(nextPlayer6)[1],
 			},
 		],
-
 	});
 }
